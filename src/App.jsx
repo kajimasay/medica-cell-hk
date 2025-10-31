@@ -130,7 +130,7 @@ export default function App() {
             <p className="mt-4 text-xs text-neutral-500">© {new Date().getFullYear()} Cell Vision Global Limited. All rights reserved.</p>
           </div>
           <form
-            action="https://formspree.io/f/xgeqkvll"  // ← 請替換成您自己的 Formspree 端點
+            action="https://formspree.io/f/xrboyrdj"  // ← 請替換成您自己的 Formspree 端點
             method="POST"
             className="rounded-3xl border p-6 shadow-sm bg-neutral-50"
           >
