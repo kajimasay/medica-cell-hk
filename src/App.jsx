@@ -1,4 +1,13 @@
+import { useTranslation } from "react-i18next";
+
 export default function App() {
+  const { t, i18n } = useTranslation();
+
+  const toggleLang = () => {
+    const next = i18n.language === "ja" ? "en" : "ja";
+    i18n.changeLanguage(next);
+  };
+
   return (
     <div className="min-h-screen bg-white text-neutral-900">
       {/* NAV */}
@@ -7,7 +16,7 @@ export default function App() {
           <div className="flex items-center gap-3">
             <img src="/logo.png" alt="Cell Vision Global Logo" className="h-10 w-10 rounded-xl object-contain bg-black" />
             <div className="leading-tight">
-              <h1 className="text-lg font-semibold">Cell Vision Global</h1>
+              <h1 className="text-lg font-semibold">{t("title")}</h1>
               <p className="text-xs text-neutral-500">香港｜品牌與研發協作</p>
             </div>
           </div>
@@ -16,6 +25,12 @@ export default function App() {
             <a href="#evidence" className="hover:opacity-70">品牌與品質</a>
             <a href="#compliance" className="hover:opacity-70">合規聲明</a>
             <a href="#contact" className="hover:opacity-70">聯絡</a>
+            <button
+              onClick={toggleLang}
+              className="border px-3 py-1 rounded text-sm ml-4"
+            >
+              {i18n.language === "ja" ? "EN" : "日本語"}
+            </button>
           </nav>
         </div>
       </header>
@@ -26,7 +41,7 @@ export default function App() {
           <div>
             <span className="inline-flex items-center rounded-full border px-3 py-1 text-xs font-medium">日本原廠技術授權 × 香港市場</span>
             <h2 className="mt-4 text-3xl md:text-5xl font-bold tracking-tight">
-              Medica Cell｜人類羊膜幹細胞血清美容液<br className="hidden md:block" />
+              {t("heroText")}<br className="hidden md:block" />
               香港市場官方資訊頁
             </h2>
             <p className="mt-4 text-neutral-600 leading-relaxed">
@@ -114,18 +129,54 @@ export default function App() {
             </div>
             <p className="mt-4 text-xs text-neutral-500">© {new Date().getFullYear()} Cell Vision Global Limited. All rights reserved.</p>
           </div>
-          <form className="rounded-3xl border p-6 shadow-sm bg-neutral-50">
+          <form
+            action="https://formspree.io/f/xgeqkvll"  // ← 請替換成您自己的 Formspree 端點
+            method="POST"
+            className="rounded-3xl border p-6 shadow-sm bg-neutral-50"
+          >
             <div className="grid gap-4">
-              <input className="w-full rounded-xl border px-4 py-3" placeholder="您的姓名" />
-              <input className="w-full rounded-xl border px-4 py-3" placeholder="電郵" />
-              <input className="w-full rounded-xl border px-4 py-3" placeholder="機構/醫院" />
-              <textarea className="w-full rounded-xl border px-4 py-3 min-h-[120px]" placeholder="想了解的產品/合作項目"></textarea>
-              <button type="button" className="rounded-2xl px-5 py-3 bg-neutral-900 text-white text-sm font-medium hover:opacity-90">送出訊息</button>
+              <input
+                className="w-full rounded-xl border px-4 py-3"
+                type="text"
+                name="name"
+                placeholder="您的姓名"
+                required
+              />
+              <input
+                className="w-full rounded-xl border px-4 py-3"
+                type="email"
+                name="email"
+                placeholder="電郵地址"
+                required
+              />
+              <input
+                className="w-full rounded-xl border px-4 py-3"
+                type="text"
+                name="organization"
+                placeholder="所屬機構／公司名稱"
+              />
+              <textarea
+                className="w-full rounded-xl border px-4 py-3 min-h-[120px]"
+                name="message"
+                placeholder="查詢內容"
+                required
+              ></textarea>
+
+              <button
+                type="submit"
+                className="rounded-2xl px-5 py-3 bg-neutral-900 text-white text-sm font-medium hover:opacity-90"
+              >
+                送出表單
+              </button>
             </div>
-            <p className="mt-3 text-xs text-neutral-500">送出此表單即表示您同意我們以電郵回覆。實際送信功能將於上線前配置。</p>
+
+            <p className="mt-3 text-xs text-neutral-500">
+              提交此表單表示您同意我們透過電郵回覆。訊息將經由 Formspree 安全傳送。
+            </p>
           </form>
+
         </div>
       </section>
     </div>
-  )
+  );
 }
