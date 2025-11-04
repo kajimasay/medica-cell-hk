@@ -1,0 +1,20 @@
+export default {
+  title: "Cell Vision Global",
+  subtitle: "香港｜ブランド・研究開発協力",
+  heroText: "Medica Cell｜人類羊膜幹細胞血清美容液",
+  heroSubtext: "香港市場公式情報ページ",
+  products: "製品",
+  evidence: "ブランド・品質",
+  compliance: "コンプライアンス声明",
+  contact: "お問い合わせ", 
+  viewProducts: "製品を見る",
+  contactUs: "お問い合わせ",
+  submit: "フォーム送信",
+  name: "お名前",
+  email: "メールアドレス",
+  organization: "組織・会社名",
+  message: "お問い合わせ内容",
+  heroDescription: "私たちは日本のCellPro Japanと協力し、「Medica Cell」人類羊膜幹細胞由来の美容エッセンス（美容用途）を導入しています。このページは製品説明とカスタマーサービスのみを目的としており、実際の成分、仕様、使用方法はラベルと付属文書に従ってください。",
+  badge: "日本原廠技術ライセンス × 香港市場",
+  imageNote: "※ここに製品イメージ写真やパッケージ写真を配置できます"
+};

@@ -1,0 +1,20 @@
+export default {
+  title: "Cell Vision Global",
+  subtitle: "Hong Kong | Brand & R&D Collaboration",
+  heroText: "Medica Cell — Human Amniotic Stem Cell Serum Essence",
+  heroSubtext: "Official Information Page for Hong Kong Market",
+  products: "Products",
+  evidence: "Brand & Quality",
+  compliance: "Compliance Statement", 
+  contact: "Contact",
+  viewProducts: "View Products",
+  contactUs: "Contact Us",
+  submit: "Submit Form",
+  name: "Your Name",
+  email: "Email Address",
+  organization: "Organization/Company",
+  message: "Inquiry Details",
+  heroDescription: "We collaborate with CellPro Japan to introduce the 'Medica Cell' human amniotic stem cell-derived beauty essence (for cosmetic use). This page is for product information and customer service only. Actual ingredients, specifications, and usage should follow the labels and accompanying documents.",
+  badge: "Japanese Original Technology License × Hong Kong Market",
+  imageNote: "* Product image or packaging can be placed here"
+};
